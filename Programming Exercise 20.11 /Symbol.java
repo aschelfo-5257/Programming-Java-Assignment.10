@@ -49,3 +49,6 @@ Plural: You can have multiple pairs of parentheses () within a single regular ex
     System.out.println(regex + " m.groupCount() " + m.groupCount());
   }
 }
+/*
+Note: Pop the top element from the stack. This popped element should be the corresponding opening symbol for the current closing symbol. For example, if ) is encountered, the popped element should be (. If they don't match, it signifies an error (e.g., (a{b)} is illegal because ) closes { incorrectly).
+*/
