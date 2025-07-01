@@ -15,8 +15,7 @@ public class Symbol {
     /* 
     Note: Match grouping symbols in Java regex are parentheses (), which are used for grouping patterns and capturing parts of matched text.
     */
-    Matcher m = Pattern.compile("(?i)((animal[^s]|(animal[s]))").matcher("The animal lives in National Zoo!")
-    // Create a matcher compile: Matcher m = Pattern.compile("(?i)((name[^s]|(name[s]))").matcher(" - ")
+    Matcher m = Pattern.compile("(?i)((animal[^s])|(animal[s]))").matcher("The animal lives in National Zoo! The animals are friendly.");
     System.out.println(m.groupCount());
 
     int singular=0, plural=0;
@@ -29,8 +28,8 @@ Plural: You can have multiple pairs of parentheses () within a single regular ex
       System.out.println("m.group(2) = " + m.group(2));
       System.out.println("m.group(3) = " + m.group(3));
       System.out.println();
-      if (n.group(2)!=null) { singular++; }
-      if (n.group(3)!=null) { plural++; }
+      if (m.group(2)!=null) { singular++; }
+      if (m.group(3)!=null) { plural++; }
       /*
       Capturing groups are numbered from left to right based on their opening parentheses, starting at 1. The entire regex pattern is always considered group 0. For Example:
       
